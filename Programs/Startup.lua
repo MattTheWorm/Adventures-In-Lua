@@ -24,7 +24,7 @@ local function update()
 	for i = 1, #testPrograms do --Test Programs
 		shell.run("delete " .. testPrograms[i])
 		shell.run("wget " .. gitPath .. "/Tests/" .. testPrograms[i])
-	
+		
 	end
 	
 	print("Update complete.")
