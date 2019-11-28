@@ -39,3 +39,5 @@ Main
 
 print("Starting..")
 update()
+print("----------")
+print("Startup complete.")
