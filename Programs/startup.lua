@@ -39,8 +39,6 @@ Main
 
 print("Starting..")
 update()
-<<<<<<< HEAD:Programs/Startup.lua
 print("----------")
 print("Startup complete.")
-=======
->>>>>>> cc5f54579197c3feada4ce20ac754f95728b3217:Programs/startup.lua
+
