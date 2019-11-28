@@ -12,7 +12,7 @@ Func
 
 local function update()
 	testPrograms = {"HelloWorld.lua"}
-	mainPrograms = {"Startup.lua"}
+	mainPrograms = {"startup.lua"}
 	gitPath = "https://raw.githubusercontent.com/MattTheWorm/ComputerCraft-Fun/master/Programs/"
 	
 	for i = 1, #mainPrograms do --Main Programs
