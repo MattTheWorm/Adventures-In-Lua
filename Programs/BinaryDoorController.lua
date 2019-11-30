@@ -16,6 +16,7 @@ local pistonArray = {}
 local maxNumber = 10 --Max number of pistons 
 local startPoint --Point in which pistons start to split from
 local x1, x2
+local sleepTime = 0.5
 
 --
 -- Func
@@ -74,7 +75,7 @@ end
 
 pistonArray[startPoint] = 0
 outputToPistons(stateToBinary(pistonArray))
-sleep(0.03)
+sleep(sleepTime)
 for i = 1, maxNumber do
   print(x1, x2)
   outputToPistons(stateToBinary(pistonArray))
@@ -95,7 +96,10 @@ for i = 1, maxNumber do
     break
   end
   
+  sleep(sleepTime)
+  
 end
 
+sleep(sleepTime)
 outputToPistons(stateToBinary(pistonArray))
 print("Complete")
