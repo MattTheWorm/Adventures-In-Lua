@@ -73,20 +73,21 @@ if startPoint > maxNumber or startPoint < 1 then
 end
 
 
-pistonArray[startPoint] = 0
+pistonArray[startPoint] = 1
+print(x1, x2)
 outputToPistons(stateToBinary(pistonArray))
 sleep(sleepTime)
 for i = 1, maxNumber do
-  print(x1, x2)
-  outputToPistons(stateToBinary(pistonArray))
-  if x1 ~= 1 then
-    x1 = x1 - 1
+  
+  
+  if x1 ~= maxNumber then
+    x1 = x1 + 1
     pistonArray[x1] = 1
 
   end
 
-  if x2 ~= maxNumber then
-    x2 = x2 + 1
+  if x2 ~= 1 then
+    x2 = x2 - 1
     pistonArray[x2] = 1
 
   end
@@ -96,6 +97,8 @@ for i = 1, maxNumber do
     break
   end
   
+  print(x1, x2)
+  outputToPistons(stateToBinary(pistonArray))
   sleep(sleepTime)
   
 end
