@@ -93,7 +93,7 @@ for i = 1, maxNumber do
 
   end
 
-  if x2 == maxNumber and x1 == 1 then
+  if x2 == 1 and x1 == maxNumber then
     print(x1, x2)
     break
   end
