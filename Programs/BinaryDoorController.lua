@@ -16,7 +16,7 @@ local pistonArray = {}
 local maxNumber = 10 --Max number of pistons 
 local startPoint --Point in which pistons start to split from
 local x1, x2
-local sleepTime = 0.07
+local sleepTime, waitTime = 0.07, 4
 
 --
 -- Func
@@ -68,12 +68,8 @@ print("Enter the starting point. (From 0 to " .. maxNumber .. ")")
 io.write("Input: ")
 startPoint = tonumber(io.read())
 x1, x2 = startPoint, startPoint
-if startPoint > maxNumber or startPoint < 1 then
-  error("Chosen starting point is greater than the maximum number of pistons or less than 1!\nExiting program.")
-
-end
-
-sleep(3)
+assert(startPoint < maxNumber or startPoint < 1, "Chosen starting point is greater than the maximum number of pistons or less than 1!\nExiting program."
+sleep(waitTime)
 pistonArray[startPoint] = 1
 print(x1, x2)
 outputToPistons(stateToBinary(pistonArray))
@@ -107,6 +103,35 @@ end
 sleep(sleepTime)
 print(x1, x2)
 outputToPistons(stateToBinary(pistonArray))
-sleep(3)
-rs.setBundledOutput("back", 0)
+sleep(waitTime)
+for i = 1, maxNumber do
+  
+  
+  if x1 ~= startPoint then
+    x1 = x1 + 1
+    pistonArray[x1] = 0
+
+  end
+
+  if x2 ~= startPoint then
+    x2 = x2 - 1
+    pistonArray[x2] = 0
+
+  end
+
+  if x2 == startPoint and x1 == startPoint then
+    break
+	
+  end
+  
+  print(x1, x2)
+  outputToPistons(stateToBinary(pistonArray))
+  sleep(sleepTime)
+  
+end
+
+sleep(sleepTime)
+print(x1, x2)
+outputToPistons(stateToBinary(pistonArray))
+
 print("Complete")
