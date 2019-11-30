@@ -64,11 +64,19 @@ end
 --
 -- Main
 --
-print("Enter the starting point. (From 0 to " .. maxNumber .. ")")
-io.write("Input: ")
-startPoint = tonumber(io.read())
+while true do
+	os.pullEvent()
+	
+	if redstone.testBundledInput("right", 1) then
+		print("White pressed!!")
+		
+	else
+		print("White not pressed.")
+		
+	end
+
+end
 x1, x2 = startPoint, startPoint
-assert(startPoint < maxNumber or startPoint < 1, "Chosen starting point is greater than the maximum number of pistons or less than 1!\nExiting program.")
 sleep(waitTime)
 pistonArray[startPoint] = 1
 print(x1, x2)
