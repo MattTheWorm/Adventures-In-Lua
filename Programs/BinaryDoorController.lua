@@ -67,7 +67,7 @@ end
 --
 -- Main
 --
-for y = 1, 5 do
+while true do
 	local event = os.pullEvent()
 	
 	print("Event found: ", event)
