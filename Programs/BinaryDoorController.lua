@@ -27,11 +27,6 @@ local function stateToBinary(stateArray, mode)
     arrayString = arrayString .. v
 
   end
-
-  if mode then
-	return tonumber(arrayString, "2")
-	
-  end
   
   return arrayString
 
@@ -50,7 +45,7 @@ end
 
 local function outputToPistons(binaryVal)
 	printState(pistonArray)
-	rs.setBundledOutput("back", binaryVal)
+	rs.setBundledOutput("back", tonumber(binaryVal, "2"))
 
 
 end
@@ -77,11 +72,11 @@ end
 
 
 pistonArray[startPoint] = 0
-outputToPistons(stateToBinary(pistonArray), 1)
+outputToPistons(stateToBinary(pistonArray))
 sleep(0.03)
 for i = 1, maxNumber do
   print(x1, x2)
-  outputToPistons(stateToBinary(pistonArray), 1)
+  outputToPistons(stateToBinary(pistonArray))
   if x1 ~= 1 then
     x1 = x1 - 1
     pistonArray[x1] = 0
@@ -101,5 +96,5 @@ for i = 1, maxNumber do
   
 end
 
-outputToPistons(stateToBinary(pistonArray), 1)
+outputToPistons(stateToBinary(pistonArray))
 print("Complete")
