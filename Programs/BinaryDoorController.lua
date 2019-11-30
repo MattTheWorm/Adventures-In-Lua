@@ -10,7 +10,7 @@ Notes:
 
 ]]--
 
-print("Now looping)
+print("Now looping")
 for i = 1, 10 do --Test
 	rs.setBundledOutput("back", 2^i)
 	sleep(0.5)
