@@ -68,7 +68,7 @@ print("Enter the starting point. (From 0 to " .. maxNumber .. ")")
 io.write("Input: ")
 startPoint = tonumber(io.read())
 x1, x2 = startPoint, startPoint
-assert(startPoint < maxNumber or startPoint < 1, "Chosen starting point is greater than the maximum number of pistons or less than 1!\nExiting program."
+assert(startPoint < maxNumber or startPoint < 1, "Chosen starting point is greater than the maximum number of pistons or less than 1!\nExiting program.")
 sleep(waitTime)
 pistonArray[startPoint] = 1
 print(x1, x2)
