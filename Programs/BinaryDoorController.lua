@@ -12,10 +12,10 @@ Notes:
 
 print("Now looping")
 for x = 1, 5 do
-	for i = 1, 10 do --Test
+	for i = 0, 10 do --Test
 		rs.setBundledOutput("back", 2^i)
-		sleep(0.35)
-
-
+		sleep(0.25)
+		rs.setBundledOutput("back", 2^(i+1))
+		
 	end
 end
