@@ -15,7 +15,8 @@ for x = 1, 5 do
 	for i = 0, 10 do --Test
 		rs.setBundledOutput("back", 2^i)
 		sleep(0.25)
-		rs.setBundledOutput("back", 2^(i+1))
+		rs.setBundledOutput("back", 2^i + 2^(i+1))
+		sleep(0.25)
 		
 	end
 end
