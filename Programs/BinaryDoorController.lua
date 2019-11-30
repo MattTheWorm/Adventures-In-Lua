@@ -11,9 +11,11 @@ Notes:
 ]]--
 
 print("Now looping")
-for i = 1, 10 do --Test
-	rs.setBundledOutput("back", 2^i)
-	sleep(0.5)
+for x = 1, 5 do
+	for i = 1, 10 do --Test
+		rs.setBundledOutput("back", 2^i)
+		sleep(0.35)
 
 
+	end
 end
