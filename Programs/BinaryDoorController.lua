@@ -9,14 +9,92 @@ Notes:
 
 
 ]]--
+--
+-- Vars
+--
+local pistonArray = {}
+local maxNumber = 10 --Max number of pistons 
+local startPoint --Point in which pistons start to split from
+local x1, x2 = startPoint, startPoint
 
-print("Now looping")
-for x = 1, 5 do
-	for i = 0, 10 do --Test
-		rs.setBundledOutput("back", 2^i)
-		sleep(0.05)
-		rs.setBundledOutput("back", 2^i + 2^(i+1))
-		sleep(0.05)
-		
-	end
+--
+-- Func
+--
+local function stateToBinary(stateArray)
+  local arrayString = ""
+
+  for i, v in pairs(stateArray) do
+    arrayString = arrayString .. v
+
+  end
+
+  return arrayString
+
 end
+
+local function printState(stateArray)
+  io.write("Current Values (Array) [")
+  for i, v in pairs(stateArray) do
+    io.write(v)
+
+  end
+
+  io.write("] Binary: ", stateToBinary(stateArray), " Value: ", tonumber(stateToBinary(stateArray), "2"), "\n")
+
+end
+
+local function outputToPistons(binaryVal)
+	printState(pistonArray)
+	rs.setBundledOutput("back", binaryVal)
+
+
+end
+
+--
+-- Array Init (based on maxNumber)
+--
+for i = 1, maxNumber do
+  pistonArray[i] = 1
+  --print("Piston position "  .. i .. " ready.")
+
+end
+
+--
+-- Main
+--
+print("Enter the starting point. (From 0 to " .. maxNumber .. ")")
+io.write("Input: ")
+startPoint = io.read()
+if startPoint > maxNumber or startPoint < 1 then
+  error("Chosen starting point is greater than the maximum number of pistons or less than 1!\nExiting program.")
+
+end
+
+
+pistonArray[startPoint] = 0
+outputToPistons(stateToBinary(pistonArray))
+sleep(0.03)
+for i = 1, maxNumber do
+  print(x1, x2)
+  outputToPistons(stateToBinary(pistonArray))
+  if x1 ~= 1 then
+    x1 = x1 - 1
+    pistonArray[x1] = 0
+
+  end
+
+  if x2 ~= maxNumber then
+    x2 = x2 + 1
+    pistonArray[x2] = 0
+
+  end
+
+  if x2 == maxNumber and x1 == 1 then
+    print(x1, x2)
+    break
+  end
+  
+end
+
+outputToPistons(stateToBinary(pistonArray))
+print("Complete")
