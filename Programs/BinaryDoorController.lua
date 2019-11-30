@@ -55,7 +55,7 @@ end
 -- Array Init (based on maxNumber)
 --
 for i = 1, maxNumber do
-  pistonArray[i] = 1
+  pistonArray[i] = 0
   --print("Piston position "  .. i .. " ready.")
 
 end
@@ -81,13 +81,13 @@ for i = 1, maxNumber do
   outputToPistons(stateToBinary(pistonArray))
   if x1 ~= 1 then
     x1 = x1 - 1
-    pistonArray[x1] = 0
+    pistonArray[x1] = 1
 
   end
 
   if x2 ~= maxNumber then
     x2 = x2 + 1
-    pistonArray[x2] = 0
+    pistonArray[x2] = 1
 
   end
 
