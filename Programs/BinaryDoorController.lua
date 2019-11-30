@@ -48,7 +48,7 @@ local function outputToPistons(binaryVal)
 	binaryVal = string.reverse(binaryVal)
 	printState(pistonArray)
 	rs.setBundledOutput("back", tonumber(binaryVal, "2"))
-	print("Piston out. Value sent: ", tonumber(binaryVal, "2"))
+	print("Piston out. Value sent: ", tonumber(binaryVal, "2"), string.format(" Binary Value: %s", binaryVal))
 	
 end
 
@@ -93,7 +93,7 @@ for i = 1, maxNumber do
 
   end
 
-  if x2 == 1 and x1 == maxNumber then
+  if x2 == maxNumber and x1 == 1 then
     break
 	
   end
