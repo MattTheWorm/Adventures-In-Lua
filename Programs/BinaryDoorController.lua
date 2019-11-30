@@ -15,7 +15,7 @@ Notes:
 local pistonArray = {}
 local maxNumber = 10 --Max number of pistons 
 local startPoint --Point in which pistons start to split from
-local x1, x2 = startPoint, startPoint
+local x1, x2
 
 --
 -- Func
@@ -65,6 +65,7 @@ end
 print("Enter the starting point. (From 0 to " .. maxNumber .. ")")
 io.write("Input: ")
 startPoint = tonumber(io.read())
+x1, x2 = startPoint, startPoint
 if startPoint > maxNumber or startPoint < 1 then
   error("Chosen starting point is greater than the maximum number of pistons or less than 1!\nExiting program.")
 
