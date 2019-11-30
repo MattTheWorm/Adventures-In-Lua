@@ -17,7 +17,7 @@ for x = 1, 5 do
 		sleep(0.05)
 		rs.setBundledOutput("back", 2^i + 2^(i+1))
 		sleep(0.05)
-		rs.setBundledOutput("back", 2^i + 2^(i+2))
+		rs.setBundledOutput("back", 2^i + 2^(i+1) + 2^(i+1))
 		sleep(0.05)
 		
 	end
