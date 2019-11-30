@@ -20,7 +20,7 @@ local x1, x2 = startPoint, startPoint
 --
 -- Func
 --
-local function stateToBinary(stateArray)
+local function stateToBinary(stateArray, mode)
   local arrayString = ""
 
   for i, v in pairs(stateArray) do
@@ -28,6 +28,11 @@ local function stateToBinary(stateArray)
 
   end
 
+  if mode then
+	return tonumber(arrayString, "2")
+	
+  end
+  
   return arrayString
 
 end
@@ -64,7 +69,7 @@ end
 --
 print("Enter the starting point. (From 0 to " .. maxNumber .. ")")
 io.write("Input: ")
-startPoint = io.read()
+startPoint = tonumber(io.read())
 if startPoint > maxNumber or startPoint < 1 then
   error("Chosen starting point is greater than the maximum number of pistons or less than 1!\nExiting program.")
 
@@ -72,11 +77,11 @@ end
 
 
 pistonArray[startPoint] = 0
-outputToPistons(stateToBinary(pistonArray))
+outputToPistons(stateToBinary(pistonArray), 1)
 sleep(0.03)
 for i = 1, maxNumber do
   print(x1, x2)
-  outputToPistons(stateToBinary(pistonArray))
+  outputToPistons(stateToBinary(pistonArray), 1)
   if x1 ~= 1 then
     x1 = x1 - 1
     pistonArray[x1] = 0
@@ -96,5 +101,5 @@ for i = 1, maxNumber do
   
 end
 
-outputToPistons(stateToBinary(pistonArray))
+outputToPistons(stateToBinary(pistonArray), 1)
 print("Complete")
