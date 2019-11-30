@@ -16,7 +16,7 @@ local pistonArray = {}
 local maxNumber = 10 --Max number of pistons 
 local startPoint --Point in which pistons start to split from
 local x1, x2
-local sleepTime = 0.5
+local sleepTime = 1
 
 --
 -- Func
@@ -40,15 +40,15 @@ local function printState(stateArray)
 
   end
 
-  io.write("] Binary: ", stateToBinary(stateArray), " Value: ", tonumber(stateToBinary(stateArray), "2"), "\n")
+  io.write("]\nBinary: ", stateToBinary(stateArray), " Value: ", tonumber(stateToBinary(stateArray), "2"), "\n")
 
 end
 
 local function outputToPistons(binaryVal)
 	printState(pistonArray)
 	rs.setBundledOutput("back", tonumber(binaryVal, "2"))
-
-
+	print("Piston out. Value sent: ", tonumber(binaryVal, "2"))
+	
 end
 
 --
