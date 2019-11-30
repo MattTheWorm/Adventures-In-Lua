@@ -45,7 +45,7 @@ local function printState(stateArray)
 end
 
 local function outputToPistons(binaryVal)
-	--binaryVal = string.reverse(binaryVal)
+	binaryVal = string.reverse(binaryVal)
 	printState(pistonArray)
 	rs.setBundledOutput("back", tonumber(binaryVal, "2"))
 	print("Piston out. Value sent: ", tonumber(binaryVal, "2"))
