@@ -88,22 +88,23 @@ for i = 1, maxNumber do
     pistonArray[x2] = 1
 
   end
+  
+  print(x1, x2)
+  outputToPistons(stateToBinary(pistonArray))
+  sleep(sleepTime)
 
   if x2 == maxNumber and x1 == 1 then
     break
 	
   end
   
-  print(x1, x2)
-  outputToPistons(stateToBinary(pistonArray))
-  sleep(sleepTime)
-  
 end
 
-sleep(sleepTime)
+sleep(waitTime)
+pistonArray[x1], pistonArray[x2] = 0
 print(x1, x2)
 outputToPistons(stateToBinary(pistonArray))
-sleep(waitTime)
+sleep(sleepTime)
 for i = 1, maxNumber do
   
   
@@ -118,20 +119,16 @@ for i = 1, maxNumber do
     pistonArray[x2] = 0
 
   end
+  
+  print(x1, x2)
+  outputToPistons(stateToBinary(pistonArray))
+  sleep(sleepTime)
 
   if x2 == startPoint and x1 == startPoint then
     break
 	
   end
   
-  print(x1, x2)
-  outputToPistons(stateToBinary(pistonArray))
-  sleep(sleepTime)
-  
 end
-
-sleep(sleepTime)
-print(x1, x2)
-outputToPistons(stateToBinary(pistonArray))
 
 print("Complete")
