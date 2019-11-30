@@ -114,13 +114,13 @@ while true do
 		for i = 1, maxNumber do
 		  
 		  
-		  if x1 ~= startPoint then
+		  if x1 ~= x2 then
 			x1 = x1 + 1
 			pistonArray[x1] = 0
 
 		  end
 
-		  if x2 ~= startPoint then
+		  if x2 ~= x1 then
 			x2 = x2 - 1
 			pistonArray[x2] = 0
 
@@ -130,7 +130,7 @@ while true do
 		  outputToPistons(stateToBinary(pistonArray))
 		  sleep(sleepTime)
 
-		  if x2 == startPoint and x1 == startPoint then
+		  if x2 == x1 then
 			break
 			
 		  end
