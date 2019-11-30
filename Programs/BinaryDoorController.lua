@@ -16,7 +16,7 @@ local pistonArray = {}
 local maxNumber = 10 --Max number of pistons 
 local startPoint --Point in which pistons start to split from
 local x1, x2
-local sleepTime = 1
+local sleepTime = 0.07
 
 --
 -- Func
@@ -73,7 +73,7 @@ if startPoint > maxNumber or startPoint < 1 then
 
 end
 
-
+sleep(3)
 pistonArray[startPoint] = 1
 print(x1, x2)
 outputToPistons(stateToBinary(pistonArray))
@@ -94,8 +94,8 @@ for i = 1, maxNumber do
   end
 
   if x2 == 1 and x1 == maxNumber then
-    print(x1, x2)
     break
+	
   end
   
   print(x1, x2)
@@ -105,5 +105,8 @@ for i = 1, maxNumber do
 end
 
 sleep(sleepTime)
+print(x1, x2)
 outputToPistons(stateToBinary(pistonArray))
+sleep(3)
+rs.setBundledOutput("back", 0)
 print("Complete")
