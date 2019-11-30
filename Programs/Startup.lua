@@ -12,7 +12,7 @@ Func
 
 local function update()
 	testPrograms = {"HelloWorld.lua"}
-	mainPrograms = {"startup.lua"}
+	mainPrograms = {"startup.lua", "BinaryDoorController.lua"}
 	gitPath = "https://raw.githubusercontent.com/MattTheWorm/ComputerCraft-Fun/master/Programs/"
 	
 	for i = 1, #mainPrograms do --Main Programs
@@ -40,5 +40,5 @@ Main
 print("Starting..")
 update()
 print("----------")
-print("Startup complete.")--x
+print("Startup complete.")
 
